@@ -11,6 +11,7 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ImageView;
 import android.widget.TextSwitcher;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
@@ -36,6 +37,8 @@ public class GankDetailActivity extends BaseActivity {
     TextSwitcher mSwitcher;
     @BindView(R.id.web_view)
     WebView mWebView;
+    @BindView(R.id.iv_no_data)
+    ImageView mIvNoData;
 
     private String mTitle;
     private String mUrl;
@@ -71,6 +74,8 @@ public class GankDetailActivity extends BaseActivity {
         } else {
             View view = mWebView.getRootView();
             Snackbar.make(view, R.string.load_data_error, Snackbar.LENGTH_SHORT).show();
+            mIvNoData.setVisibility(View.VISIBLE);
+            mWebView.setVisibility(View.GONE);
             return;
         }
     }

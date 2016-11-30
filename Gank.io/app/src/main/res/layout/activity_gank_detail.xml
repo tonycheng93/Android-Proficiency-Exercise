@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context="com.sky.gank.mvp.view.GankDetailActivity">
+        tools:context="com.sky.gankio.mvp.view.GankDetailActivity">
 
     <include layout="@layout/view_toolbar_with_title_view"/>
 
@@ -24,4 +24,12 @@
             android:id="@+id/web_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"></WebView>
+
+    <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/iv_no_data"
+            android:visibility="invisible"
+            android:src="@drawable/no_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 </LinearLayout>
